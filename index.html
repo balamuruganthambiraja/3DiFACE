@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Imiatator creates audio driven personalized 3D Facial animation.">
+  <meta name="keywords" content="Imitator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imitator: Personalized Speech-driven 3D Facial Animation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Imitator: Personalized Speech-driven 3D Facial Animation</h1>
+          <span class="author-block"><h6 class="title is-3">ICCV 2023</h1></span>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Balamurugan Thambiraja</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://people.mpi-inf.mpg.de/~ihabibie/">Ikhsanul Habibie</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sadegh-aa.github.io/">Sadegh Aliakbarian</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/coskerdarren/">Darren Cosker</a><sup>3</sup>,
+            </span>
+            <p> </p>
+            <span class="author-block">
+              <a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> Max Planck Institute for Intelligent Systems, Tübingen, Germany,</span>
+            <span class="author-block"><sup>2</sup> Max Planck Institute for Informatics, Saarland, Germany,</span>
+            <p> </p>
+            <span class="author-block"><sup>3</sup> Mesh Labs, Microsoft, Cambridge, UK.</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="media/pdf/Imitator__Personalized_speech_driven_3D_facial_animation_ICCV2023.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2301.00023"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=Ij_z4JvatnA&ab_channel=JustusThies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/bala1144/Imitator"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <img src="./media/img/teaser.png" alt="Italian Trulli">
+          <p>
+            Imitator is a novel method for personalized speech-driven 3D facial animation.
+            Given an audio sequence and a personalized style-embedding as input, we generate person-specific motion sequences with accurate lip closures for bilabial consonants ('m','b','p').
+            The style-embedding of a subject can be computed by a short reference video (e.g., 5s).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Overview. -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Speech-driven 3D facial animation has been widely explored, with applications in gaming, character animation, virtual reality, and telepresence systems.
+            State-of-the-art methods <i>deform the face topology of the target actor to sync the input audio without considering the identity-specific speaking style and facial idiosyncrasies</i> of the target actor, thus, resulting in unrealistic and inaccurate lip movements. 
+          </p>
+          <p>
+            To address this, we present Imitator, a speech-driven facial expression synthesis method, which learns identity-specific details from a short input video and produces
+             novel facial expressions matching the identity-specific speaking style and facial idiosyncrasies of the target actor.  Specifically,
+          </p> 
+          <p>
+          <b>
+            <ol>
+              <li>We train a style-agnostic transformer(audio-driven facial expression prior) on a VOCAset.</li>
+              <li>We optimize for identity-specific speaking style based on this prior and a short reference video.</li>
+            </ol> 
+          </b> 
+            To train the prior, we introduce a novel loss function based on detected bilabial consonants to ensure plausible lip closures and consequently improve the realism of the generated expressions.
+            Through detailed experiments and user studies, we show that our approach <b>improves Lip-Sync by 49% and produces expressive facial animations</b> from input audio while preserving the actor’s speaking style.
+          </p>  
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          
+          <iframe width="834" height="469" src="https://www.youtube.com/embed/Ij_z4JvatnA?rel=0&amp;showinfo=0" 
+          title="Imitator: Personalized Speech-driven 3D Facial Animation (ICCV 2023)" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <!-- <iframe src="https://www.youtube.com/embed/JhXTdjiUCUw?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <!-- Proposed Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Proposed Method</h2>
+        <div class="content has-text-justified">
+          <img src="./media/img/method.png" alt="Italian Trulli">
+          <p>
+            Overview of the proposed method. Our method takes audio as input and encodes it to audio embedding using a pre-trained <a href="https://arxiv.org/abs/2006.11477">Wav2Vec2.0 model</a> . This audio embedding  &acirc;<sub>1:T</sub> is
+            interpreted by an auto-regressive viseme decoder which generates a generalized motion feature  v&#770;<sub>1:T</sub>. A style-adaptable motion decoder
+            maps these motion features to person-specific facial expressions &ycirc;<sub>1:T</sub> in terms of vertex displacements on top of a template mesh. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Proposed Method. -->  
+
+
+    <!-- Result Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Result</h2>
+        <div class="content has-text-justified">
+          <img src="./media/img/heat_map.jpg" alt="Italian Trulli">
+          <p>
+            Comparison of the different methods on the VOCA test set with mean L2 vertex distance error.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Result-->  
+  
+  </div>
+</section>
+
+<section class="hero is-light is-max-desktop">
+
+  <!-- Impact of personalization -->
+  <div class="hero-body">
+    <div class="columns is-centered ">
+      <h2 class="title is-3">Impact of Personalization</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-personalization-01">
+          <video poster="" id="personalization-01" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaliation_01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-04">
+          <video poster="" id="personalization-04" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_04.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-05">
+          <video poster="" id="personalization-05" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_05.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-06">
+          <video poster="" id="personalization-06" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_06.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-02">
+          <video poster="" id="personalization-02" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_02.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-personalization-03">
+          <video poster="" id="personalization-03" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/personalization/personaization_03.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impact of Lip Contact Loss -->
+  <div class="hero-body">
+    <div class="columns is-centered ">
+      <h2 class="title is-3">Impact of Lip Contact Loss</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item item-lip-01">
+          <video poster="" id="lip-01" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-lip-02">
+          <video poster="" id="lip-02" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_02.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lip-03">
+          <video poster="" id="lip-03" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_03.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lip-04">
+          <video poster="" id="lip-04" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/lip_contact/lip_04.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+ <!-- Impact of Cross-Model -->
+ <div class="hero-body">
+    
+  <div class="columns is-centered ">
+    <h2 class="title is-3">Cross-Style and Audio generalization</h2>
+  </div>
+  
+  <div class="container">
+
+    <div class="item item-cross_style_eval">
+      <video poster="" id="cross_style_eval" autoplay controls muted loop playsinline height="100%">
+        <source src="./media/videos/misc/cross_style_eval.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+
+
+    <div class="item item-novel_audio">
+      <video poster="" id="novel_audio" autoplay controls muted loop playsinline height="100%">
+        <source src="./media/videos/misc/novel_audio.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+
+  </div>  
+
+</div>
+
+
+
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @InProceedings{Thambiraja_2023_ICCV,
+        author    = {Thambiraja, Balamurugan and Habibie, Ikhsanul and Aliakbarian, Sadegh and Cosker, Darren and Theobalt, Christian and Thies, Justus},
+        title     = {Imitator: Personalized Speech-driven 3D Facial Animation},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2023},
+        pages     = {20621-20631}
+    }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+      <div class="content has-text-centered">
+          <a class="icon-link" href="">
+              <i class="fas fa-file-pdf"></i>
+          </a>
+          <a class="icon-link" href="" class="external-link" disabled>
+              <i class="fab fa-github"></i>
+          </a>
+      </div>
+      <div class="columns is-centered">
+          <div class="column is-8">
+              <div class="content">
+                  <p style="text-align:center">
+                      Source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+                          href="https://nerfies.github.io/">Nerfies website</a>.
+                  </p>
+                  <p style="text-align:center">
+                      Please contact <a href="https://ncs.is.mpg.de/person/bthambiraja">Balamurugan Thambiraja</a> for feedback and questions.
+                  </p>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
