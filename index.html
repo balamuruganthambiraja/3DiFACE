@@ -6,7 +6,7 @@
         content="Imiatator creates audio driven personalized 3D Facial animation.">
   <meta name="keywords" content="Imitator">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imitator: Personalized Speech-driven 3D Facial Animation</title>
+  <title>3DiFACE: Diffusion-based Speech-driven 3D Facial Animation and Editing</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -74,13 +74,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Imitator: Personalized Speech-driven 3D Facial Animation</h1>
-          <span class="author-block"><h6 class="title is-3">ICCV 2023</h1></span>
+          <h2 class="title is-1 publication-title">3DiFACE: Diffusion-based Speech-driven 3D Facial Animation and Editing</h2>
+          <!-- <span class="author-block"><h6 class="title is-3">ICCV 2023</h1></span> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Balamurugan Thambiraja</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://people.mpi-inf.mpg.de/~ihabibie/">Ikhsanul Habibie</a><sup>2</sup>,</span>
+            <!-- <span class="author-block"> -->
+              <!-- <a href="https://people.mpi-inf.mpg.de/~ihabibie/">Ikhsanul Habibie</a><sup>2</sup>,</span> -->
             <span class="author-block">
               <a href="https://sadegh-aa.github.io/">Sadegh Aliakbarian</a><sup>3</sup>,
             </span>
@@ -88,16 +88,17 @@
               <a href="https://www.microsoft.com/en-us/research/people/coskerdarren/">Darren Cosker</a><sup>3</sup>,
             </span>
             <p> </p>
-            <span class="author-block">
-              <a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><sup>2</sup>,
+            <!-- <span class="author-block"> -->
+              <!-- <a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><sup>2</sup>, -->
             </span>
             <span class="author-block">
-              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1</sup>,
+              <a href="https://justusthies.github.io/">Justus Thies</a><sup>1,</sup><sup>2</sup>,
             </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup> Max Planck Institute for Intelligent Systems, Tübingen, Germany,</span>
-            <span class="author-block"><sup>2</sup> Max Planck Institute for Informatics, Saarland, Germany,</span>
+            <p> </p>
+            <span class="author-block"><sup>2</sup>Technical University of Darmstadt,</span>
             <p> </p>
             <span class="author-block"><sup>3</sup> Mesh Labs, Microsoft, Cambridge, UK.</span>
           </div>
@@ -134,25 +135,14 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/bala1144/Imitator"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (coming soon)</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-            </div> -->
-
           </div>
         </div>
       </div>
@@ -169,9 +159,9 @@
         <div class="content has-text-justified">
           <img src="./media/img/teaser.png" alt="Italian Trulli">
           <p>
-            Imitator is a novel method for personalized speech-driven 3D facial animation.
-            Given an audio sequence and a personalized style-embedding as input, we generate person-specific motion sequences with accurate lip closures for bilabial consonants ('m','b','p').
-            The style-embedding of a subject can be computed by a short reference video (e.g., 5s).
+            <b>3DiFACE</b> is a novel diffusion-based method for speech-driven 3D facial animation.
+            Given an audio sequence, our method can generate motion sequences with lip-sync and stochasticity. 
+            Additionally, 3DiFACE can be used for audio-consistent motion 
           </p>
         </div>
       </div>
@@ -183,23 +173,15 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+
           <p>
-            Speech-driven 3D facial animation has been widely explored, with applications in gaming, character animation, virtual reality, and telepresence systems.
-            State-of-the-art methods <i>deform the face topology of the target actor to sync the input audio without considering the identity-specific speaking style and facial idiosyncrasies</i> of the target actor, thus, resulting in unrealistic and inaccurate lip movements. 
-          </p>
-          <p>
-            To address this, we present Imitator, a speech-driven facial expression synthesis method, which learns identity-specific details from a short input video and produces
-             novel facial expressions matching the identity-specific speaking style and facial idiosyncrasies of the target actor.  Specifically,
-          </p> 
-          <p>
-          <b>
-            <ol>
-              <li>We train a style-agnostic transformer(audio-driven facial expression prior) on a VOCAset.</li>
-              <li>We optimize for identity-specific speaking style based on this prior and a short reference video.</li>
-            </ol> 
-          </b> 
-            To train the prior, we introduce a novel loss function based on detected bilabial consonants to ensure plausible lip closures and consequently improve the realism of the generated expressions.
-            Through detailed experiments and user studies, we show that our approach <b>improves Lip-Sync by 49% and produces expressive facial animations</b> from input audio while preserving the actor’s speaking style.
+            We present <b>3DiFACE</b>, a novel method for personalized speech-driven 3D facial animation and editing. 
+            While existing methods deterministically predict facial animations from speech, they overlook the inherent one-to-many relationship between speech and facial expressions, i.e., there are multiple reasonable facial expression animations matching an audio input.
+            It is especially important in content creation to be able to modify generated motion or to specify keyframes.
+            To enable stochasticity as well as motion editing, we propose a lightweight audio-conditioned diffusion model for 3D facial motion.
+            This diffusion model can be trained on a small 3D motion dataset, maintaining expressive lip motion output.
+            In addition, it can be finetuned for specific subjects, requiring only a short video of the person.
+            Through quantitative and qualitative evaluations, we show that our method outperforms existing state-of-the-art techniques and yields speech-driven animations with greater fidelity and diversity.
           </p>  
 
         </div>
@@ -231,9 +213,9 @@
         <div class="content has-text-justified">
           <img src="./media/img/method.png" alt="Italian Trulli">
           <p>
-            Overview of the proposed method. Our method takes audio as input and encodes it to audio embedding using a pre-trained <a href="https://arxiv.org/abs/2006.11477">Wav2Vec2.0 model</a> . This audio embedding  &acirc;<sub>1:T</sub> is
-            interpreted by an auto-regressive viseme decoder which generates a generalized motion feature  v&#770;<sub>1:T</sub>. A style-adaptable motion decoder
-            maps these motion features to person-specific facial expressions &ycirc;<sub>1:T</sub> in terms of vertex displacements on top of a template mesh. 
+            Our method takes noised vertex displacements, denoted as x<sub>t</sub>, and the diffusion time step embedding as inputs to predict a denoised sample x&#770;<sub>0</sub>, leveraging both the audio conditioning signal A&#770; and a person-specific feature vector <i>S<sub>i</sub></i>. 
+            Our approach employs <a href="https://arxiv.org/abs/2006.11477">Wav2Vec2.0 model</a> for extracting audio features from the raw audio signal. 
+            The audio condition is injected into the network by concatenation through a series of convolutional blocks. Note that N corresponds to the frame count of the sequence and D to the number of vertices.
           </p>
         </div>
       </div>
