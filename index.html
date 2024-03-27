@@ -79,7 +79,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h2 class="title is-1 publication-title">3DiFACE: Diffusion-based Speech-driven 3D Facial Animation and Editing</h2>
+          <h2 class="title is-1 publication-title">3DiFACE: Synthesizing and Editing Holistic 3D Facial Animation</h2>
           <!-- <span class="author-block"><h6 class="title is-3">ICCV 2023</h1></span> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -164,9 +164,7 @@
         <div class="content has-text-justified">
           <img src="./media/img/teaser.png" alt="Italian Trulli">
           <p>
-            <b>3DiFACE</b> is a novel diffusion-based method for speech-driven 3D facial animation.
-            Given an audio sequence, our method can generate motion sequences with lip-sync and stochasticity. 
-            Additionally, 3DiFACE can be used for audio-consistent motion editing.
+            <b>3DiFACE</b> is a novel diffusion-based method for synthesizing and editing holistic 3D facial animation from an audio sequence, wherein one can synthesize a diverse set of facial animations (top), seamlessly edit facial animations between two or multiple user-specified keyframes, and extrapolating motion from past motion (bottom).
           </p>
         </div>
       </div>
@@ -179,7 +177,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
 
-          <p>
+          <!-- <p>
             We present <b>3DiFACE</b>, a novel method for personalized speech-driven 3D facial animation and editing. 
             While existing methods deterministically predict facial animations from speech, they overlook the inherent one-to-many relationship between speech and facial expressions, i.e., there are multiple reasonable facial expression animations matching an audio input.
             It is especially important in content creation to be able to modify generated motion or to specify keyframes.
@@ -188,8 +186,25 @@
             This diffusion model can be trained on a small 3D motion dataset, maintaining expressive lip motion output.
             In addition, it can be finetuned for specific subjects, requiring only a short video of the person.
             Through quantitative and qualitative evaluations, we show that our method outperforms existing state-of-the-art techniques and yields speech-driven animations with greater fidelity and diversity.
-          </p>  
+          </p>   -->
 
+          <!-- % -->
+          Creating an animation of a specific person with audio-synced lip motions, realistic head motion and editing via artist-defined keyframes are a set of tasks that challenge existing speech-driven 3D facial animation methods.
+          <!-- % -->
+          Especially, editing 3D facial animation is a complex and time-consuming task carried out by highly skilled animators.
+          <!-- % -->
+          Also, most existing works overlook the inherent one-to-many relationship between speech and facial motion, where multiple plausible lip and head animations could sync with the audio input. 
+          <!-- % -->
+          To this end, we present  <i>3DiFACE</i>, a novel method for holistic speech-driven 3D facial animation, which produces diverse plausible lip and head motions for a single audio input, while also allowing editing via keyframing and interpolation.
+          <!-- % -->
+          <i>3DiFACE</i> is a lightweight audio-conditioned diffusion model, which can be fine-tuned to generate personalized 3D facial animation requiring only a short video of the subject.
+          <!-- % -->
+          Specifically, we leverage the viseme-level diversity in our training corpus to train a fully-convolutional diffusion model that produces diverse sequences for single audio input.
+          <!-- % -->
+          Additionally, we employ a modified guided motion diffusion to enable head-motion synthesis and editing using masking.
+          <!-- % -->
+          Through quantitative and qualitative evaluations, we demonstrate that our method is capable of generating and editing diverse holistic 3D facial animations given a single audio input, with control between high fidelity and diversity.
+          <!-- % -->
         </div>
       </div>
     </div>
@@ -213,9 +228,9 @@
         <div class="content has-text-justified">
           <img src="./media/img/method.png" alt="Italian Trulli">
           <p>
-            Our method takes noised vertex displacements, denoted as x<sub>t</sub>, and the diffusion time step embedding as inputs to predict a denoised sample x&#770;<sub>0</sub>, leveraging both the audio conditioning signal A&#770; and a person-specific feature vector <i>S<sub>i</sub></i>. 
-            Our approach employs <a href="https://arxiv.org/abs/2006.11477">Wav2Vec2.0 model</a> for extracting audio features from the raw audio signal. 
-            The audio condition is injected into the network by concatenation through a series of convolutional blocks. Note that N corresponds to the frame count of the sequence and D to the number of vertices.
+Our goal is to synthesize and edit holistic 3D facial animation given input audio
+signal. To acheive this, we model the facial and head motion using two diffusion-based networks, motivated by the fact that the face motion is highly correlated to the speech signal, while the head motion is relatively less correlated and thus requires a longer context of information,
+hence, a different training scheme (and data). 
           </p>
         </div>
       </div>
@@ -327,35 +342,280 @@
   </div> -->
 
  <!-- Impact of Cross-Model -->
- <!-- <div class="hero-body">
-    
+ <div class="hero-body">
+
+  <div class="container">
+    <div class="item item-cross_style_eval">
+      <video poster="" id="cross_style_eval" autoplay controls muted loop playsinline height="100%">
+        <source src="./media/videos/holistic_result.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>  
+
+</div>
+
+
+<!-- Editing  -->
+<div class="hero-body"> 
   <div class="columns is-centered ">
-    <h2 class="title is-3">Cross-Style and Audio generalization</h2>
+    <h4 class="title is-3">Editing</h4>
   </div>
   
   <div class="container">
+     
+      <div class="columns is-centered ">
+        <p>
+          User can take an existing sequence and edit part of sequences.
+        </p>
+      </div>
+      </br>
 
-    <div class="item item-cross_style_eval">
-      <video poster="" id="cross_style_eval" autoplay controls muted loop playsinline height="100%">
-        <source src="./media/videos/misc/cross_style_eval.mp4"
-                type="video/mp4">
-      </video>
+      <div class="columns is-centered">
+      
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <!-- <h2 class="title is-3">Regenerate parts</h2> -->
+            <!-- <p>
+              An user can take an existing sequence and remove part of it and inbetween sequences
+            </p> -->
+            <video id="dollyzoom" controls loop playsinline height="100%">
+              <source src="./media/videos/edit01.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!--/ Visual Effects. -->
+
+        <!-- Matting. -->
+        <div class="column">
+          <!-- <h2 class="title is-3">Matting</h2> -->
+          <div class="columns is-centered">
+            <div class="column content">
+              <!-- <p>
+                As a byproduct of our method, we can also solve the matting problem by ignoring
+                samples that fall outside of a bounding box during rendering.
+              </p> -->
+              <video id="dollyzoom" controls loop playsinline height="100%">
+                <source src="./media/videos/edit02.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- <div class="container"> -->
+        <!-- </div>  -->
+    
+      </div>
+      
+      <div class="item item-cross_style_eval">
+        <video poster="" id="cross_style_eval" autoplay controls muted loop playsinline height="70%">
+          <source src="./media/videos/edit03.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+  </div>
+</div>
+
+<!-- Holisitc motion synthesis  -->
+<div class="hero-body"> 
+  
+  <div class="columns is-centered ">
+    <h4 class="title is-3">Holisitc motion synthesis comparison</h4>
+  </div>
+  
+  <div class="container">
+     
+      <div class="columns is-centered">
+    
+        <div class="column">
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/videos/holistic_comp01.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <!-- <h2 class="title is-3">Matting</h2> -->
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/videos/holistic_comp02.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    
+  </div>
+
+</div>
+
+<!-- Holisitc motion synthesis  -->
+<div class="hero-body"> 
+  
+  <div class="columns is-centered ">
+    <h4 class="title is-3">Lip motion synthesis comparison</h4>
+  </div>
+  
+  <div class="container">
+     
+      <div class="columns is-centered">
+    
+        <div class="column">
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/videos/lip_motion_seq_01.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <!-- <h2 class="title is-3">Matting</h2> -->
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/videos/lip_motion_seq_02.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    
+  </div>
+</div>
+
+
+<!-- Holisitc motion synthesis  -->
+<div class="hero-body"> 
+  
+  <div class="columns is-centered ">
+    <h4 class="title is-3">Lip motion diversity comparison</h4>
+  </div>
+  
+  <div class="container">
+     
+      <div class="columns is-centered">
+    
+        <div class="column">
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/videos/lip_div01.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <!-- <h2 class="title is-3">Matting</h2> -->
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/videos/lip_div02.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    
+  </div>
+</div>
+
+
+<!-- Holisitc motion synthesis  -->
+<div class="hero-body"> 
+  
+  <div class="columns is-centered ">
+    <h4 class="title is-3">Ablation: Editing</h4>
+  </div>
+  
+  <div class="container">
+     
+      <div class="columns is-centered">
+    
+        <div class="column">
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/videos/persn_abl.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <!-- <h2 class="title is-3">Matting</h2> -->
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/videos/gmd_abl.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    
+  </div>
+</div>
+
+  <!-- Impact of personalization -->
+  <div class="hero-body">
+    <div class="columns is-centered ">
+      <h2 class="title is-3">Ablation</h2>
     </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-abl-01">
+          <video poster="" id="abl-01" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/win_abl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-abl-04">
+          <video poster="" id="abl-04" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/noise_abl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
 
-
-    <div class="item item-novel_audio">
-      <video poster="" id="novel_audio" autoplay controls muted loop playsinline height="100%">
-        <source src="./media/videos/misc/novel_audio.mp4"
-                type="video/mp4">
-      </video>
+        <div class="item item-abl-05">
+          <video poster="" id="abl-05" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/p_data_abl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-abl-06">
+          <video poster="" id="abl-06" autoplay controls muted loop playsinline height="100%">
+            <source src="./media/videos/uncond.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
     </div>
-
-  </div>  
-
-</div> -->
+  </div>
 
 
 </section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
